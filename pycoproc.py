@@ -207,7 +207,7 @@ class Pycoproc:
         try:
             self.calibrate_rtc()
         except Exception:
-            pass
+            raise
         time_s = int((time_s * self.clk_cal_factor) + 0.5)  # round to the nearest integer
         if time_s >= 2**(8*3):
             time_s = 2**(8*3)-1
