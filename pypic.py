@@ -91,7 +91,7 @@ class Pypic:
             r_data = self.serial.read(2)
             if not r_data:
                 raise Exception('Timeout while waiting for Rx data')
-            return struct.unpack('B', r_data[0])[0]
+            return r_data[0]
 
     def _send_cmd(self, cmd):
         return self._write(bytearray([cmd]))
